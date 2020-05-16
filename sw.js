@@ -33,7 +33,7 @@ self.addEventListener('activate', evt => {
 
 self.addEventListener('fetch', evt => {
     console.log('Pobranie: ', evt);
-    evt.respondWidth(
+    evt.respondWith(
         caches.match(evt.request).then(cacheRes =>{
             return cacheRes || fetch(evt.request);
         })
